@@ -27,7 +27,7 @@ app.listen(port, () => {
     extname: '.hbs'
 }));   //tạo ra engine
 app.set('view engine', 'hbs');   //sử dụng view engine
-    app.set('views', path.join(__dirname, 'resource/views')); // ', ' mặc định nó sẽ chuyển thành trong Window sẽ là 'resources\\views' cho mình
+    app.set('views', path.join(__dirname, 'resource','views')); // ', ' mặc định nó sẽ chuyển thành trong Window sẽ là 'resources\\views' cho mình
 
 //home ,search , contact 
 //router init 

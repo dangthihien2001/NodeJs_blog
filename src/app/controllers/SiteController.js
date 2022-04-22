@@ -1,8 +1,19 @@
+const Course = require('../models/Course')
+const {mutipleMogooseToObject} = require('../../util/mongoose')
 class SiteController{  
 
     // [GET] /
-    index(req, res){
-        res.render('home');
+    index(req, res,next){
+        Course.find({})
+            .then(courses =>
+                {
+                    res.render('home',
+                    {
+                        courses: mutipleMogooseToObject(courses)
+                    }) 
+                })  //truyền biến Courses (key: value) bên view sử dụng  
+            .catch(next)
+        // res.render('home');
     }
 
     //[GET] /search
