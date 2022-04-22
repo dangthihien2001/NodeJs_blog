@@ -6,6 +6,10 @@ const port = process.env.PORT || 3000; //bao rang dich vu se su dung port 5000
 const path = require('path');
 const { resolveSoa } = require('dns');
 const route = require('./routers')
+const db = require('./config/db');
+
+//conect to db
+db.connect()
 
 //HTTP Logger
 // app.use(morgan('combined'))

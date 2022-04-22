@@ -1,18 +1,9 @@
 const newsRouter = require('./news');
+const siteRouter = require('./site');
 function route(app) {
-  app.get('/', (req, res) => res.render('home'));
-  //định nghĩa tuyến đường cho phương thức là get trên router
-  app.get('/search', (req, res) => {
-    // console.log(req.query)
-    res.render('search');
-  });
-
-  app.post('/search', (req, res) => {
-    console.log(req.body);
-    res.send('');
-  });
 
   app.use('/news', newsRouter);
+  app.use('/',siteRouter);
 }
 
 module.exports = route;
