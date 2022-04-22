@@ -1,10 +1,10 @@
-const express = require('express')
+const express = require('express');
 
-const router = express.Router()
+const router = express.Router();
 
-const siteController = require('../app/controllers/SiteController')
+        const siteController = require('../app/controllers/SiteController');
 
-router.use('/search',siteController.search) 
-router.use('/',siteController.index) //tuyến đường gốc ở dưới cùng  vì nó luôn đọc từ trên xuống. 
+      router.use('/search', siteController.search);
+router.use('/', siteController.index); //tuyến đường gốc ở dưới cùng  vì nó luôn đọc từ trên xuống.
 
-module.exports = router
+module.exports = router;
